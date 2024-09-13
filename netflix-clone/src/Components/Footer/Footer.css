@@ -6,10 +6,8 @@
 }
 .footer_inner_container{
     width: 60%;
-    /* background-color: red; */
 }
 .footer_icons{
-    /* background-color: blue; */
     width: 12%;
     display: flex;
     justify-content: space-between;
@@ -26,7 +24,6 @@
     flex-direction: column;
     justify-content: space-around;
     height: 12vh;
-    /* background-color: blue; */
 }
 .footer_data ul li{
     cursor: pointer;
