@@ -15,9 +15,11 @@
     "@mui/icons-material": "^6.0.2",
     "@mui/material": "^6.0.2",
     "axios": "^1.7.7",
+    "bootstrap": "^5.3.3",
     "dotenv": "^16.4.5",
     "movie-trailer": "^3.2.2",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
     "react-youtube": "^10.1.0"
   },

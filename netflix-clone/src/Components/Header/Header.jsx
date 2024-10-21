@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NetflixLogo from "../../assets/images/NetflixLogo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
@@ -6,10 +6,29 @@ import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "./header.css";
 
-
 const Header = () => {
+  const [show, setShow] = useState(false);
+
+  // Detect scroll event and toggle the background
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="header_outer_container">
+    <div className={`header_outer_container ${show && "nav__black"}`}>
       <div className="header_container">
         <div className="header_left">
           <ul>
@@ -17,7 +36,7 @@ const Header = () => {
               <img src={NetflixLogo} alt="Netflix Logo" width="100" />
             </li>
             <li>Home</li>
-            <li>TVShows</li>
+            <li>TV Shows</li>
             <li>Movies</li>
             <li>Latest</li>
             <li>Browse by Languages</li>

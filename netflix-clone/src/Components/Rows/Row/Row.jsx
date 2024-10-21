@@ -5,11 +5,12 @@ import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 
 
+
 // Defining a constant base_url for the image base URL
 const base_url = "https://image.tmdb.org/t/p/original";
 
 // Defining the component with props such as title, fetchUrl, and isLargeRow
-const Row = ({ title, fetchUrl, isLargeRow }) => {
+const Row = ({ title, fetchUrl, isLargeRow ,activeTrailer,setActiveTrailer }) => {
   // initializing two state variables: movies(an array) and trailerUrl (a string)
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
@@ -41,6 +42,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
   const handleClick = (movie) => {
     if (trailerUrl) {
       setTrailerUrl("");
+      setActiveTrailer("");
     }
     // fetching the movie trailer URL using movieTrailer library
     else {
@@ -48,6 +50,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get("v"));
+          setActiveTrailer(title)
         })
         .catch((error) => console.error("Trailer not found", error));
     }
@@ -75,7 +78,8 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         })}
       </div>
       <div style={{ padding: "40px" }}>
-        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+        {trailerUrl && activeTrailer === title && <YouTube videoId={trailerUrl} opts={opts} />}
+
       </div>
     </div>
   );

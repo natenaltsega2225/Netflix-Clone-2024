@@ -1,8 +1,8 @@
 
 .banner{
     margin-top:-10vh;
-    height:100vh;
-    /* margin-bottom: 40px; */
+    /* height:100vh; */
+    margin-bottom: 40px;
     color: white;
 	object-fit: contain;
 }
@@ -23,7 +23,7 @@
 	font-size: 1rem;
 	max-width: 360px;
 	height: 80px;
-	margin-bottom: 200px;
+	/* margin-bottom: 200px; */
 	margin-bottom: 100px;
 }
 .banner__button {
