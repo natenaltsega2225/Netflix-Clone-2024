@@ -7,10 +7,9 @@ redirects = []
 [functions."*"]
 
 [build]
-publish = "C:\\Users\\natit\\OneDrive\\Desktop\\Evangadi\\Phase-4\\Netflix-Clone-2024\\netflix-clone\\dist"
+publish = "C:\\Users\\natit\\OneDrive\\Desktop\\Evangadi\\Phase-4\\Netflix-Clone-2024\\dist"
 publishOrigin = "ui"
 commandOrigin = "ui"
-base = "C:\\Users\\natit\\OneDrive\\Desktop\\Evangadi\\Phase-4\\Netflix-Clone-2024\\netflix-clone"
 command = "npm run build"
 
 [build.environment]
